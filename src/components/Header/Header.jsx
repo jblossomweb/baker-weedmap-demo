@@ -9,7 +9,7 @@ import Logo from '../../assets/logo.svg';
 import classNames from 'classnames/bind';
 import s from './Header.css';
 
-var cx = classNames.bind(s);
+const cx = classNames.bind(s);
 
 class Header extends Component {
   render() {
@@ -30,7 +30,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  spin: PropTypes.bool
+  spin: PropTypes.bool,
 };
 
 export default withStyles(s)(Header);
