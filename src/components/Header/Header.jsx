@@ -6,6 +6,7 @@ import Toolbar from 'material-ui/Toolbar';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.svg';
 import s from './Header.css';
 
@@ -15,7 +16,9 @@ const Header = props => (
   <AppBar position="static" color="default">
     <Toolbar className={s.root}>
       <IconButton aria-label="Logo">
-        <Logo className={cx(s.logo, { spin: props.spin })} alt="logo" />
+        <Link to="/home">
+          <Logo className={cx(s.logo, { spin: props.spin })} alt="logo" />
+        </Link>
       </IconButton>
       <Typography type="title" color="inherit" className={s.title}>
         { props.title }
