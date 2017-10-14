@@ -1,14 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
 import s from './App.css';
 import { Header } from '../../components';
 import { HomeContainer, AnotherContainer } from '../../containers';
 
-const history = createBrowserHistory();
-
 const App = () => (
-  <Router history={history}>
+  <Router>
     <div className={s.root}>
       <Header title="Find a Dispensary" />
       <Route default exact path="/" component={HomeContainer} />
