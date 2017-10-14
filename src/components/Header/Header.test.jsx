@@ -5,9 +5,11 @@ import Header from './Header';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render((
+  ReactDOM.render(
     <Router>
       <Header />
     </Router>
-  ), div);
+    ,
+    div,
+  );
 });

@@ -16,7 +16,7 @@ const Header = props => (
   <AppBar position="static" color="default">
     <Toolbar className={s.root}>
       <IconButton aria-label="Logo">
-        <Link to="/home">
+        <Link to="/home" href>
           <Logo className={cx(s.logo, { spin: props.spin })} alt="logo" />
         </Link>
       </IconButton>
