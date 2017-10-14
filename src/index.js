@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions, react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto';
