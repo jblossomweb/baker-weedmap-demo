@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import logo from '../../assets/logo.svg';
+import Logo from '../../assets/logo.svg';
 import classNames from 'classnames/bind';
 import s from './Header.css';
 
@@ -11,7 +11,7 @@ class Header extends Component {
     const { spin, title } = this.props;
     return (
       <header className={s.root}>
-        <img src={logo} className={cx('logo', { spin })} alt="logo" />
+        <Logo className={cx('logo', { spin })} alt="logo" />
         <h1 className="Header-title">{ title }</h1>
       </header>
     );
