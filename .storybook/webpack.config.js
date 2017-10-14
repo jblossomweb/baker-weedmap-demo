@@ -26,7 +26,15 @@ module.exports = {
             options: {
               jsx: true
             }
-          }
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        use: [
+          {
+            loader: "file-loader"
+          },
         ],
       },
     ],
