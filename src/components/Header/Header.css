@@ -1,16 +1,6 @@
-.App {
+.Header {
   text-align: center;
-}
-
-.App-logo {
-  height: 80px;
-}
-
-.App-logo.spin {
-  animation: App-logo-spin infinite 1s linear;
-}
-
-.App-header {
+  font-family: sans-serif;
   background-color: #41b2c5;
   height: 150px;
   padding: 20px;
@@ -18,15 +8,23 @@
   text-shadow: 1px 1px 1px #000;
 }
 
-.App-title {
+.Header-logo {
+  height: 80px;
+}
+
+.Header-spin {
+  animation: Header-logo-spin infinite 1s linear;
+}
+
+.Header-title {
   font-size: 1.5em;
 }
 
-.App-intro {
+.Header-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+@keyframes Header-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
