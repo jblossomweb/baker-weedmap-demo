@@ -1,4 +1,4 @@
-.Header {
+.root {
   text-align: center;
   font-family: sans-serif;
   background-color: #41b2c5;
@@ -8,20 +8,16 @@
   text-shadow: 1px 1px 1px #000;
 }
 
-.Header-logo {
+.logo {
   height: 80px;
 }
 
-.Header-spin {
+.spin {
   animation: Header-logo-spin infinite 1s linear;
 }
 
-.Header-title {
+.title {
   font-size: 1.5em;
-}
-
-.Header-intro {
-  font-size: large;
 }
 
 @keyframes Header-logo-spin {
