@@ -57,11 +57,14 @@
     "test": "node scripts/test.js --env=jsdom",
     "lint": "node_modules/.bin/eslint --ext=js --ext=jsx .",
     "lintfix": "node_modules/.bin/eslint --fix --ext=js --ext=jsx .",
+    "stylelint": "node_modules/.bin/stylelint '**/*.css'",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "react-svg-loader": "^2.1.0"
+    "react-svg-loader": "^2.1.0",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
