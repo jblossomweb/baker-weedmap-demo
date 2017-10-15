@@ -30,7 +30,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|jpg)$/,
+        test: /\.(woff|woff2|eot|ttf|jpg|png)$/,
         use: [
           {
             loader: "file-loader"
