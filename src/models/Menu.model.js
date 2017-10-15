@@ -51,8 +51,8 @@ export default {
         created: '',
         updated: '',
         deleted: '',
-      }
-    ]
+      },
+    ],
   },
   map: raw => map(raw, item => ({
     name: item.name,
@@ -78,4 +78,4 @@ export default {
     updated: item.updated_at,
     deleted: item.deleted_at,
   })),
-}
+};
