@@ -1,9 +1,9 @@
 import React from 'react';
+import { CityGrid } from '../components';
+import cities from '../data/cities';
 
 const HomeContainer = () => (
-  <div>
-    Placeholder for the HomeContainer. This will be wired up to Redux.
-  </div>
+  <CityGrid cities={cities} />
 );
 
 export default HomeContainer;
