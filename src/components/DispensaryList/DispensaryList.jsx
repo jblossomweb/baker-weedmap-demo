@@ -9,7 +9,7 @@ const DispensaryList = props => (
   <div className={s.root}>
     <List className={s.list}>
       {props.dispensaries.map(dispensary => (
-        <DispensaryListItem dispensary={dispensary} />
+        <DispensaryListItem dispensary={dispensary} key={dispensary.slug} />
       ))}
     </List>
   </div>
