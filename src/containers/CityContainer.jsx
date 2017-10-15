@@ -1,11 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { DispensaryList } from '../components';
+import service from '../services/weedmaps.service'; // TODO: connect to redux sagas, and/or inject into App
 
-const CityContainer = ({ match }) => (
-  <div>
-    CityContainer. City slug is: { match.params.slug }
-  </div>
-);
+class CityContainer extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      dispensaries: [],
+    };
+  }
+  componentDidMount() {
+    const { slug } = this.props.match.params;
+    service.getDispensariesByCity(slug).then((dispensaries) => {
+      this.setState({ dispensaries });
+    });
+  }
+  render() {
+    return (
+      <DispensaryList dispensaries={this.state.dispensaries} />
+    );
+  }
+}
 
 CityContainer.propTypes = {
   match: PropTypes.shape({

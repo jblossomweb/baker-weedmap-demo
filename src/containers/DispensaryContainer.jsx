@@ -1,11 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import service from '../services/weedmaps.service'; // TODO: connect to redux sagas, and/or inject into App
+import Menu from '../models/Menu.model';
+import { MenuDataTable } from '../components';
 
-const DispensaryContainer = ({ match }) => (
-  <div>
-    DispensaryContainer. Dispensary slug is: { match.params.slug }
-  </div>
-);
+class DispensaryContainer extends React.Component {
+  constructor() {
+    super();
+    this.getMenu = this.getMenu.bind(this);
+    this.updateMenu = this.updateMenu.bind(this);
+    this.state = {
+      menu: [],
+      // categories: {},
+    };
+  }
+  componentDidMount() {
+    service.getCategories()
+      .then((rawCategories) => {
+        const categories = Menu.mapCategories(rawCategories);
+        this.getMenu(categories);
+      });
+  }
+  getMenu(categories) {
+    const { slug } = this.props.match.params;
+    service.getMenu(slug)
+      .then((rawMenu) => {
+        const menu = Menu.map(rawMenu, categories);
+        this.updateMenu(menu);
+      });
+    // this.setState({ categories });
+  }
+  updateMenu(menu) {
+    this.setState({ menu });
+  }
+  render() {
+    const { menu } = this.state;
+    return (
+      <MenuDataTable menu={menu} />
+    );
+  }
+}
 
 DispensaryContainer.propTypes = {
   match: PropTypes.shape({
