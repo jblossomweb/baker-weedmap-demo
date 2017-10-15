@@ -17,7 +17,7 @@ const App = () => (
       <div className={s.container}>
         <Route default exact path="/" component={HomeContainer} />
         <Route path="/menu/:slug" component={DispensaryContainer} />
-        <Route path="/:slug" component={CityContainer} />
+        <Route path="/city/:slug" component={CityContainer} />
       </div>
     </div>
   </Router>

@@ -16,7 +16,7 @@ const CityTile = ({ city }) => (
       title={city.name}
       subtitle={<span>{city.state}</span>}
       actionIcon={
-        <Link to={`/${city.slug}`} href>
+        <Link to={`/city/${city.slug}`} href>
           <IconButton>
             <InfoIcon color="rgba(255, 255, 255, 0.54)" />
           </IconButton>
