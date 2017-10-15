@@ -21,7 +21,6 @@ class DispensaryListItem extends React.Component {
     };
   }
   handleClick() {
-    console.log('clicked');
     this.setState({ clicked: true });
   }
   render() {
