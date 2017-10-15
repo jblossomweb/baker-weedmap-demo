@@ -1,4 +1,5 @@
 import map from 'lodash/map';
+import each from 'lodash/each';
 import PropTypes from 'prop-types';
 
 export default {
@@ -26,6 +27,7 @@ export default {
       updated: PropTypes.string,
       deleted: PropTypes.string,
     })),
+    categories: PropTypes.objectOf(PropTypes.string),
   },
   defaultProps: {
     menu: [
@@ -53,14 +55,16 @@ export default {
         deleted: '',
       },
     ],
+    categories: {},
   },
-  map: raw => map(raw, item => ({
+  map: (raw, categories) => map(raw, item => ({
     name: item.name,
     slug: item.slug,
     description: item.body,
     html: item.body_html,
     image: item.image,
-    categoryId: item.menu_item_category_id, // damn near useless without a 2nd call.
+    categoryId: item.menu_item_category_id,
+    categoryName: categories ? categories[item.menu_item_category_id] : 'Other',
     price: {
       // I see weedmaps assumes USD
       halfGram: item.price_half_gram, // who buys a half gram?
@@ -78,4 +82,11 @@ export default {
     updated: item.updated_at,
     deleted: item.deleted_at,
   })),
+  mapCategories: (raw) => {
+    const keyedObject = { 0: 'Other' };
+    each(raw, (category) => {
+      keyedObject[category.id] = category.name;
+    });
+    return keyedObject;
+  },
 };
