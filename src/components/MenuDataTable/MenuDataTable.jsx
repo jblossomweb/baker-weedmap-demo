@@ -1,6 +1,8 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import {
+  SortingState,
+  LocalSorting,
   FilteringState,
   LocalFiltering,
 } from '@devexpress/dx-react-grid';
@@ -34,10 +36,17 @@ class MenuDataTable extends React.PureComponent {
         rows={rows}
         columns={columns}
       >
+        <SortingState defaultSorting={[
+          {
+            columnName: 'name',
+            direction: 'asc',
+          },
+        ]} />
+        <LocalSorting />
         <FilteringState defaultFilters={[]} />
         <LocalFiltering />
         <TableView />
-        <TableHeaderRow />
+        <TableHeaderRow allowSorting />
         <TableFilterRow />
       </Grid>
     );
