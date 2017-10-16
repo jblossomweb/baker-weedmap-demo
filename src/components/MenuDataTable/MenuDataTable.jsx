@@ -23,6 +23,8 @@ class MenuDataTable extends React.PureComponent {
       columns: [
         { name: 'name', title: 'Name' },
         { name: 'categoryName', title: 'Category' },
+        { name: 'lowestPrice', title: 'Lowest Price' },
+        { name: 'published', title: 'published' }, // TODO: not a string for display
         { name: 'description', title: 'Description' },
       ],
       rows: props.menu,

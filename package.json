@@ -52,6 +52,7 @@
     "redux-saga": "^0.15.6",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
+    "truncate": "^2.0.0",
     "typeface-roboto": "^0.0.35",
     "url-loader": "0.5.9",
     "webpack": "3.5.1",
